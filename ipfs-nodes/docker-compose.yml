@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  ipfs1:
+    image: ipfs/go-ipfs:latest
+    container_name: ipfs1
+    ports:
+      - "5001:5001"    # API
+      - "4001:4001"    # Swarm
+      - "8081:8080"    # Gateway 👈 أضف هذا
+    volumes:
+      - ipfs1-data:/data/ipfs
+
+  ipfs2:
+    image: ipfs/go-ipfs:latest
+    container_name: ipfs2
+    ports:
+      - "5002:5001"
+      - "4002:4001"
+      - "8082:8080"   
+    volumes:
+      - ipfs2-data:/data/ipfs
+
+  ipfs3:
+    image: ipfs/go-ipfs:latest
+    container_name: ipfs3
+    ports:
+      - "5003:5001"
+      - "4003:4001"
+      - "8083:8080"    
+    volumes:
+      - ipfs3-data:/data/ipfs
+
+volumes:
+  ipfs1-data:
+  ipfs2-data:
+  ipfs3-data:
