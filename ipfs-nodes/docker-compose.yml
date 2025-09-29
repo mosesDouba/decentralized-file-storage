@@ -7,7 +7,7 @@ services:
     ports:
       - "5001:5001"    # API
       - "4001:4001"    # Swarm
-      - "8081:8080"    # Gateway 👈 أضف هذا
+      - "8081:8080"    # Gateway 
     volumes:
       - ipfs1-data:/data/ipfs
 
